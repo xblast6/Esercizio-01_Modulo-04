@@ -84,7 +84,9 @@ function CalcolaSommaArray() {
         for (let i = 0; i < arrayEs5.length; i++) {
             sommaArray += arrayEs5[i]
         }
-        document.getElementById("rispostaEs5").innerText = sommaArray
+        document.getElementById("risposta2Es5").innerText = "Array: [" + arrayEs5.join(", ") + "]";
+        document.getElementById("rispostaEs5").innerText = "La somma è: " + sommaArray
         document.getElementById("inputNumEs5").value = ""
     })
 }
+CalcolaSommaArray()

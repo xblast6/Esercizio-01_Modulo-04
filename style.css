@@ -1,0 +1,29 @@
+
+.container-esercizi {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.card-esercizio {
+    border: 1px solid black;
+    border-radius: 15pt;
+    width: 300px;
+    height: 350px;
+    padding: 15px;
+}
+
+.container-interazione {
+    display: flex;
+    border-bottom: 1px solid grey;
+    padding-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+.container-input {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}

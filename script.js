@@ -90,3 +90,132 @@ function CalcolaSommaArray() {
     })
 }
 CalcolaSommaArray()
+//ESERCIZIO 06
+let arrayEs6 = [5, 6, 10, 1, 20, 25]
+function controllaArray(array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === 1 || array[i] === 3) {
+            document.getElementById("rispostaEs6").innerText = "True"
+            break
+        } else {
+            document.getElementById("rispostaEs6").innerText = "False"
+        }
+        
+    }
+    
+}
+controllaArray(arrayEs6)
+//ESERCIZIO 07
+function controllaAngolo(x) {
+    if (x < 90) {
+        document.getElementById("rispostaEs7").innerText = "Acuto"
+        return;
+    } else if (x === 90) {
+        document.getElementById("rispostaEs7").innerText = "Retto"
+        return;
+    } else if (x > 90 && x < 180) {
+        document.getElementById("rispostaEs7").innerText = "Ottuso"
+        return;
+    } else if (x === 180) {
+        document.getElementById("rispostaEs7").innerText = "Piatto"
+        return;
+    }
+}
+
+document.getElementById("btnEs7").addEventListener("click", function() {
+    let x = parseInt(document.getElementById("inputNumEs7").value)
+    controllaAngolo(x)
+    document.getElementById("inputNumEs7").value = ""
+})
+
+//ESERCIZIO 08
+function creaAcronimo(frase) {
+    let acronimo = []
+    console.log(frase);
+    let fraseSplit = frase.split(" ")
+    console.log(fraseSplit);
+    for (let i = 0; i < fraseSplit.length; i++) {
+        let iniziale = fraseSplit[i].slice(0, 1)
+        acronimo.push(iniziale)
+        console.log(iniziale);
+    }
+    acronimo = acronimo.join("")
+    document.getElementById("rispostaEs8").innerText = acronimo
+}
+
+document.getElementById("btnEs8").addEventListener("click", function() {
+    let frase = document.getElementById("inputTextEs8").value
+    creaAcronimo(frase)
+    document.getElementById("inputTextEs8").value = ""
+})
+
+//ESERCIZIO 09
+function trovaIlCaratterePiùUsato(frase) {
+    let conteggio = {}
+    let fraseSplit = frase.split("");
+    for (let carattere of fraseSplit) {
+        conteggio[carattere] = (conteggio[carattere] || 0) + 1;
+    }
+    console.log(conteggio);
+    let massimo = 0;
+    let caratterePiuUsato = null;
+    for (let carattere in conteggio) { // Itera su tutte le chiavi dell'oggetto
+        if (conteggio[carattere] > massimo) {
+            massimo = conteggio[carattere];
+            caratterePiuUsato = carattere;
+        }
+    }
+    document.getElementById("rispostaEs9").innerText = "Il carattere più usato è: " + caratterePiuUsato + ". è stato usato :" + massimo +" volte"
+}
+document.getElementById("btnEs9").addEventListener("click", function() {
+    let frase = document.getElementById("inputTextEs9").value
+    trovaIlCaratterePiùUsato(frase)
+    document.getElementById("inputTextEs9").value = ""
+})
+
+//ESERCIZIO 10
+function controllaAnagramma(frase1, frase2) {
+    let pulisciStringa = (str) => str.toLowerCase().replace(/[^a-z0-9]/g, "");
+    let frase1Pulita = pulisciStringa(frase1)
+    let frase2Pulita = pulisciStringa(frase2)
+    /* console.log(frase1Pulita);
+    console.log(frase2Pulita); */
+    let frase1Split = frase1Pulita.split("")
+    let frase2Split = frase2Pulita.split("")
+    /* console.log(frase1Split);
+    console.log(frase2Split); */
+    let frase1OrdAlfabetico = frase1Split.sort()
+    let frase2OrdAlfabetico = frase2Split.sort()
+    /* console.log(frase1OrdAlfabetico);
+    console.log(frase2OrdAlfabetico); */
+    let risultato1 = frase1OrdAlfabetico.join("")
+    let risultato2 = frase2OrdAlfabetico.join("")
+    /* console.log(risultato1);
+    console.log(risultato2); */
+    if (risultato1 === risultato2) {
+        document.getElementById("rispostaEs10").innerText = "Le due parole sono anagrammi"
+    } else {
+        document.getElementById("rispostaEs10").innerText = "Le due parole NON sono anagrammi"
+    }
+}
+
+document.getElementById("btnEs10").addEventListener("click", function() {
+    let frase1 = document.getElementById("inputText1Es10").value
+    let frase2 = document.getElementById("inputText2Es10").value
+    controllaAnagramma(frase1, frase2)
+    document.getElementById("inputText1Es10").value = ""
+    document.getElementById("inputText2Es10").value = ""
+})
+
+//ESERCIZIO 11
+let listaAnagrammi = ["ostia" , "staio", "storia", "stoia", "tiaso", "ciao", "sole"]
+let parolaAnagramma = "astio"
+function aggiungiAnagrammi(array, parola) {
+    let pulisciStringa = (str) => str.toLowerCase().replace(/[^a-z0-9]/g, "");
+    let risultatoParola = pulisciStringa(parola).split("").sort().Join("")
+    let parolaArray = ""
+    for (let i = 0; i < listaAnagrammi.length; i++) {
+        
+        
+    }
+}

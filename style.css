@@ -1,8 +1,20 @@
+body, html {
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    
+}
+
+body {
+    padding: 15px;
+    font-family: "Roboto", sans-serif;
+}
 
 .container-esercizi {
     display: flex;
     justify-content: center;
     gap: 40px;
+    flex-wrap: wrap;
 }
 
 .card-esercizio {
@@ -11,11 +23,12 @@
     width: 300px;
     height: 350px;
     padding: 15px;
+    background-color: rgb(184, 176, 176);
 }
 
 .container-interazione {
     display: flex;
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid rgb(0, 0, 0);
     padding-bottom: 20px;
     align-items: center;
     justify-content: space-between;

@@ -211,11 +211,103 @@ document.getElementById("btnEs10").addEventListener("click", function() {
 let listaAnagrammi = ["ostia" , "staio", "storia", "stoia", "tiaso", "ciao", "sole"]
 let parolaAnagramma = "astio"
 function aggiungiAnagrammi(array, parola) {
+    let risultatoAnagramma = []
     let pulisciStringa = (str) => str.toLowerCase().replace(/[^a-z0-9]/g, "");
-    let risultatoParola = pulisciStringa(parola).split("").sort().Join("")
+    let risultatoParola = pulisciStringa(parola).split("").sort().join("")
+    console.log(risultatoParola);
     let parolaArray = ""
+    let parolaAnagrammaGiusta = []
+    let parolaAppoggio= ""
     for (let i = 0; i < listaAnagrammi.length; i++) {
-        
-        
+        parolaAppoggio = listaAnagrammi[i]
+        /* parolaAnagrammaGiusta.push(listaAnagrammi[i]) */
+        parolaArray = pulisciStringa(listaAnagrammi[i]).split("").sort().join("")
+        console.log(parolaArray);
+        if (parolaArray === risultatoParola) {
+            risultatoAnagramma.push(parolaAppoggio)
+        }
+    }
+    document.getElementById("rispostaE11").innerText = risultatoAnagramma
+}
+
+document.getElementById("btnEs11").addEventListener("click", function() {
+    aggiungiAnagrammi(listaAnagrammi, parolaAnagramma)
+
+})
+
+//ESERCIZIO 12
+function controlloPalindromo(parola) {
+    /* parolaSplit = parola.split("")
+    console.log(parolaSplit); */
+    parolaSplitReverse = parola.split("").reverse().join("")
+    console.log(parolaSplitReverse);
+    if (parola === parolaSplitReverse) {
+        document.getElementById("rispostaEs12").innerText = "True"
+    } else {
+        document.getElementById("rispostaEs12").innerText = "False"
     }
 }
+
+document.getElementById("btnEs12").addEventListener("click", function() {
+    let parola = document.getElementById("inputTextEs12").value
+    controlloPalindromo(parola)
+    document.getElementById("inputTextEs12").value = ""
+})
+
+//ESERCIZIO 13
+function invertiNumeri(num) {
+    let NumeroInLettere = num.toString()
+    console.log(NumeroInLettere);
+    numeroSplitReverseInLettere = NumeroInLettere.split("").reverse().join("")
+    console.log(numeroSplitReverseInLettere);
+    let numeroReverse = parseInt(numeroSplitReverseInLettere)
+    document.getElementById("rispostaEs13").innerText = numeroReverse
+}
+
+document.getElementById("btnEs13").addEventListener("click", function() {
+    let num = parseInt(document.getElementById("inputNumEs13").value)
+    invertiNumeri(num)
+    document.getElementById("inputNumEs13").value = ""
+})
+
+//ESERCIZIO 14
+function creaScala(num) {
+    let contenitore = document.getElementById("rispostaEs14");
+    contenitore.innerHTML = ""; 
+
+    for (let i = 1; i < num; i++) {
+        contenitore.innerHTML += "#".repeat(i) + "<br>";
+        console.log("#".repeat(i)); 
+    }
+}
+document.getElementById("btnEs14").addEventListener("click", function() {
+    let num = parseInt(document.getElementById("inputNumEs14").value)
+    creaScala(num)
+    document.getElementById("inputNumEs14").value = ""
+})
+
+//ESERCIZIO 15
+function stringaReverse(parola) {
+    let parolaReverse = parola.split("").reverse().join("")
+    document.getElementById("rispostaEs15").innerText = parolaReverse 
+
+}
+document.getElementById("btnEs15").addEventListener("click", function() {
+    let parola = document.getElementById("inputTextEs15").value
+    stringaReverse(parola)
+    document.getElementById("inputTextEs15").value = ""
+})
+
+//ESERCIZIO 16
+let arrayEs16 = []
+function creaSottoArray(array, num) {
+    let sottoArray = []
+    for (let i = 0; i < array.length; i++) {
+        if (i < num) {
+            sottoArray.push(array[i])
+        }
+    }
+    document.getElementById("rispostaEs16").innerText = "L'array è :" + arrayEs16
+    document.getElementById("risposta2Es16").innerText = "I sotto array sono :" + sottoArray
+}
+
